@@ -1,5 +1,7 @@
 # Playground and Cheatsheet for Learning Python
 
+## \*\* A4 Step 3 — Synchronize the Forks — README edit \*\*
+
 > 🇺🇦 UKRAINE [IS BEING ATTACKED](https://war.ukraine.ua/) BY RUSSIAN ARMY. CIVILIANS ARE GETTING KILLED. RESIDENTIAL AREAS ARE GETTING BOMBED.
 > - Help Ukraine via:
 >   - [Serhiy Prytula Charity Foundation](https://prytulafoundation.org/en/)
