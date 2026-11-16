@@ -401,11 +401,11 @@ def test_list_filtering():
     # The filter(func, list) returns a **filter object** of values that fit a specific criteria
     # without altering the original one.
     # The means by which the values are filtered can be defined as function returning a boolean, as such:
-    def filterFunc(e):
+    def isEven(e):
         return e % 2 == 0
 
     originalList = [1,2,3,4,5,6,7,8,9]
-    evenList = filter(filterFunc, originalList)
+    evenList = filter(isEven, originalList)
     assert originalList == [1,2,3,4,5,6,7,8,9]
 
     # To assert the equality properly, the filter object must be cast as a list.
