@@ -37,12 +37,26 @@ def test_dictionary():
     assert fruits_dictionary['banana'] == 'yellow'
     assert fruits_dictionary['cherry'] == 'red'
 
+    # You can also add a default value if the key doesn't exist.
+    assert fruits_dictionary.get('pineapple', 'not found') == 'not found'
+    # If the key exists, it will return the corresponding value.
+    assert fruits_dictionary.get('apple', 'not found') == 'green'
+
     # To check whether a single key is in the dictionary, use the in keyword.
     assert 'apple' in fruits_dictionary
     assert 'pineapple' not in fruits_dictionary
 
     # Change the apple color to "red".
     fruits_dictionary['apple'] = 'red'
+    assert fruits_dictionary['apple'] == 'red'
+
+    # Change multiple entries at once.
+    fruits_dictionary.update({
+        'apple': 'green',
+        'banana': 'brown'
+    })
+    assert fruits_dictionary['apple'] == 'green'
+    assert fruits_dictionary['banana'] == 'brown'
 
     # Add new key/value pair to the dictionary
     fruits_dictionary['pineapple'] = 'yellow'
