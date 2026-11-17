@@ -404,17 +404,20 @@ def test_list_filtering():
     def isEven(e):
         return e % 2 == 0
 
-    originalList = [1,2,3,4,5,6,7,8,9]
+    originalList = []
+    for number in range(10):
+        originalList.append(number ** 2)
+
     evenList = filter(isEven, originalList)
-    assert originalList == [1,2,3,4,5,6,7,8,9]
+    assert originalList == [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
 
     # To assert the equality properly, the filter object must be cast as a list.
-    assert list(evenList) == [2,4,6,8]
+    assert list(evenList) == [0, 4, 16, 36, 64]
 
     # Alternatively, it can be defined as a lambda expressing inside the filter() call itself
     oddList = filter(lambda x: x % 2 != 0, originalList)
-    assert originalList == [1,2,3,4,5,6,7,8,9]
-    assert list(oddList) == [1,3,5,7,9]
+    assert originalList == [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+    assert list(oddList) == [1, 9, 25, 49, 81]
 
     # ---
 
