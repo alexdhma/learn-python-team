@@ -401,20 +401,20 @@ def test_list_filtering():
     # The filter(func, list) returns a **filter object** of values that fit a specific criteria
     # without altering the original one.
     # The means by which the values are filtered can be defined as function returning a boolean, as such:
-    def isEven(e):
-        return e % 2 == 0
+    def isOdd(o):
+        return o % 2 != 0
 
     originalList = [1,2,3,4,5,6,7,8,9]
-    evenList = filter(isEven, originalList)
+    oddList = filter(isOdd, originalList)
     assert originalList == [1,2,3,4,5,6,7,8,9]
 
     # To assert the equality properly, the filter object must be cast as a list.
-    assert list(evenList) == [2,4,6,8]
+    assert list(oddList) == [1,3,5,7,9]
 
     # Alternatively, it can be defined as a lambda expressing inside the filter() call itself
-    oddList = filter(lambda x: x % 2 != 0, originalList)
+    evenList = filter(lambda x: x % 2 == 0, originalList)
     assert originalList == [1,2,3,4,5,6,7,8,9]
-    assert list(oddList) == [1,3,5,7,9]
+    assert list(evenList) == [2,4,6,8]
 
     # ---
 
